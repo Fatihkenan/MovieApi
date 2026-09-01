@@ -5,5 +5,7 @@
   <Folder Name="/Infrastructure/">
     <Project Path="Infrastructure/Persistence/Persistence.csproj" Id="1661ab16-0387-4252-8699-1f16a8dc2b6e" />
   </Folder>
-  <Folder Name="/Presentation/" />
+  <Folder Name="/Presentation/">
+    <Project Path="Presentation/MovieApi.WebApi/MovieApi.WebApi.csproj" Id="9ae10a1b-9353-4c9a-99df-a2da3708e397" />
+  </Folder>
 </Solution>

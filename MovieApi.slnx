@@ -2,6 +2,8 @@
   <Folder Name="/Core/">
     <Project Path="Core/MovieApi.Domain/MovieApi.Domain.csproj" Id="8550e901-7d98-43db-a80f-9bf6be1dbe71" />
   </Folder>
-  <Folder Name="/Infrastructure/" />
+  <Folder Name="/Infrastructure/">
+    <Project Path="Infrastructure/Persistence/Persistence.csproj" Id="1661ab16-0387-4252-8699-1f16a8dc2b6e" />
+  </Folder>
   <Folder Name="/Presentation/" />
 </Solution>

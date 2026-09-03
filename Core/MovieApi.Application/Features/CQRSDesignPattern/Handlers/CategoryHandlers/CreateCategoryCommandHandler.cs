@@ -12,7 +12,8 @@ namespace MovieApi.Application.Features.CQRSDesignPattern.Handlers.CategoryHandl
         public async Task Handle(CreateCategoryCommand command)
         {
             _context.Categories.Add(new Domain.Entities.Category { Name = command.Name });
+            await _context.SaveChangesAsync();
         }
-        await _context.SaveChangesAsync();
+
     }
 }

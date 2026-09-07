@@ -2,7 +2,7 @@
 
 namespace MovieApi.Application.Features.CQRSDesignPattern.Handlers.CategoryHandlers
 {
-    internal class RemoveCategoryCommandHandler
+    public class RemoveCategoryCommandHandler
     {
 
         private readonly MovieContext _context;

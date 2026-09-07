@@ -1,11 +1,24 @@
 using Microsoft.EntityFrameworkCore;
+using MovieApi.Application.Features.CQRSDesignPattern.Handlers.CategoryHandlers;
+using MovieApi.Application.Features.CQRSDesignPattern.Handlers.MovieHandlers;
 using Persistence.Context;
-// Eğer alttaki MovieContext hala kızarırsa üzerine tıklayıp Ctrl + . basarak using referansını ekle.
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 // 1. Controller'ları sisteme dahil et
 builder.Services.AddControllers();
+builder.Services.AddScoped<GetCategoryByIdQueryHandler>();
+builder.Services.AddScoped<GetCategoryQueryHandler>();
+builder.Services.AddScoped<CreateCategoryCommandHandler>();
+builder.Services.AddScoped<UpdateCategoryCommandHandler>();
+builder.Services.AddScoped<RemoveCategoryCommandHandler>();
+
+builder.Services.AddScoped<GetMovieByIdQueryHandler>();
+builder.Services.AddScoped<GetMovieQueryHandler>();
+builder.Services.AddScoped<CreateMovieCommandHandler>();
+builder.Services.AddScoped<UpdateMovieCommandHandler>();
+builder.Services.AddScoped<RemoveMovieCommandHandler>();
 
 // Veritabanı sınıfını sisteme tanıt
 builder.Services.AddDbContext<MovieContext>(options =>

@@ -5,9 +5,9 @@ namespace MovieApi.Application.Features.MediatorDesignPattern.Queries
 {
     public class GetCastByIdQuery : IRequest<GetCastByIdQueryResult>
     {
-        public GetCastByIdQuery(int ıd)
+        public GetCastByIdQuery(int id)
         {
-            Id = ıd;
+            Id = id;
         }
 
         public int Id { get; set; }

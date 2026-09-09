@@ -1,6 +1,8 @@
-﻿namespace MovieApi.Application.Features.MediatorDesignPattern.Commands.CastCommands
+﻿using MediatR;
+
+namespace MovieApi.Application.Features.MediatorDesignPattern.Commands.CastCommands
 {
-    public class RemoveCastCommand
+    public class RemoveCastCommand : IRequest
     {
         public RemoveCastCommand(int ıd)
         {

@@ -10,5 +10,6 @@ namespace MovieApi.Application.Features.MediatorDesignPattern.Queries.TagQueries
             this.Id = id;
         }
         public int Id { get; set; }
+        public string Title { get; internal set; }
     }
 }

@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using MovieApi.Application.Features.CQRSDesignPattern.Handlers.CategoryHandlers;
 using MovieApi.Application.Features.CQRSDesignPattern.Handlers.MovieHandlers;
+using MovieApi.Application.Features.MediatorDesignPattern.Commands.TagCommands;
 using Persistence.Context;
 
 
@@ -20,6 +21,11 @@ builder.Services.AddScoped<CreateMovieCommandHandler>();
 builder.Services.AddScoped<UpdateMovieCommandHandler>();
 builder.Services.AddScoped<RemoveMovieCommandHandler>();
 
+// GetExecutingAssembly (Bulunduğun yeri tara) YERİNE, 
+// typeof(CreateUserCommand).Assembly (CreateUserCommand sınıfının olduğu katmanı tara) diyoruz!
+
+builder.Services.AddMediatR(cfg =>
+    cfg.RegisterServicesFromAssembly(typeof(CreateTagCommand).Assembly));
 // Veritabanı sınıfını sisteme tanıt
 builder.Services.AddDbContext<MovieContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("MovieDbConnectionString")));

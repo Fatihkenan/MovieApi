@@ -4,9 +4,9 @@ namespace MovieApi.Application.Features.MediatorDesignPattern.Commands.CastComma
 {
     public class RemoveCastCommand : IRequest
     {
-        public RemoveCastCommand(int ıd)
+        public RemoveCastCommand(int id)
         {
-            Id = ıd;
+            Id = id;
         }
 
         public int Id { get; set; }

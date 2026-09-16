@@ -39,8 +39,8 @@ namespace MovieApi.WebApi.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateMovie([FromBody] CreateMovieCommand command)
         {
-            var movie = await _createMovieCommandHandler.Handle(command);
-            return CreatedAtAction(nameof(GetMovieById), new { id = movie.Id }, movie);
+            await _createMovieCommandHandler.Handle(command);
+            return Ok(new { message = "Movie created successfully.", StatusCode = 200 });
         }
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteMovie(int id)

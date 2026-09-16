@@ -1,4 +1,5 @@
-﻿using Persistence.Context;
+﻿using MovieApi.Application.Features.CQRSDesignPattern.Commands.CategoryCommands;
+using Persistence.Context;
 
 namespace MovieApi.Application.Features.CQRSDesignPattern.Handlers.CategoryHandlers
 {

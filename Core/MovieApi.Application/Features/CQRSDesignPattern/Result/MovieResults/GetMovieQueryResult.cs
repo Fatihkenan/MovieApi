@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace MovieApi.Application.Features.CQRSDesignPattern.Result.MovieResults
+﻿namespace MovieApi.Application.Features.CQRSDesignPattern.Result.MovieResults
 {
     public class GetMovieQueryResult
     {
@@ -17,4 +13,4 @@ namespace MovieApi.Application.Features.CQRSDesignPattern.Result.MovieResults
         public bool Status { get; set; }
     }
 }
-}
+

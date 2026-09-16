@@ -1,4 +1,5 @@
-﻿using Persistence.Context;
+﻿using MovieApi.Application.Features.CQRSDesignPattern.Commands.MovieCommands;
+using Persistence.Context;
 
 namespace MovieApi.Application.Features.CQRSDesignPattern.Handlers.MovieHandlers
 {
@@ -21,7 +22,7 @@ namespace MovieApi.Application.Features.CQRSDesignPattern.Handlers.MovieHandlers
                 Status = command.Status,
                 ReleaseDate = command.ReleaseDate,
                 CreatedYear = command.CreatedYear,
-                rating = command.Rating,
+                rating = command.rating,
                 Title = command.Title,
             });
             await _context.SaveChangesAsync();

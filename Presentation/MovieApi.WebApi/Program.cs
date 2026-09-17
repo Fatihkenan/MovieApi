@@ -1,6 +1,8 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using MovieApi.Application.Features.CQRSDesignPattern.Handlers.CategoryHandlers;
 using MovieApi.Application.Features.CQRSDesignPattern.Handlers.MovieHandlers;
+using MovieApi.Application.Features.CQRSDesignPattern.Handlers.UserRegisterHandlers;
 using MovieApi.Application.Features.MediatorDesignPattern.Commands.TagCommands;
 using Persistence.Context;
 
@@ -20,6 +22,10 @@ builder.Services.AddScoped<GetMovieQueryHandler>();
 builder.Services.AddScoped<CreateMovieCommandHandler>();
 builder.Services.AddScoped<UpdateMovieCommandHandler>();
 builder.Services.AddScoped<RemoveMovieCommandHandler>();
+
+builder.Services.AddScoped<CreateUserRegisterCommandHandler>();
+builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+    .AddEntityFrameworkStores<MovieContext>();
 
 // GetExecutingAssembly (Bulunduğun yeri tara) YERİNE, 
 // typeof(CreateUserCommand).Assembly (CreateUserCommand sınıfının olduğu katmanı tara) diyoruz!
